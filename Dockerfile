@@ -12,8 +12,8 @@ rm -f /lib/systemd/system/sockets.target.wants/*initctl*; \
 rm -f /lib/systemd/system/basic.target.wants/*;\
 rm -f /lib/systemd/system/anaconda.target.wants/*;
 
-ADD oracle-instantclient18.3-basic-18.3.0.0.0-1.x86_64.rpm /tmp
-ADD oracle-instantclient18.3-devel-18.3.0.0.0-1.x86_64.rpm /tmp
+COPY oracle-instantclient18.3-basic-18.3.0.0.0-1.x86_64.rpm /tmp
+COPY oracle-instantclient18.3-devel-18.3.0.0.0-1.x86_64.rpm /tmp
 
 RUN  yum -y update && \
      yum -y install php-pecl-memcache php php-devel httpd gcc make libaio  && \
